@@ -1,0 +1,6 @@
+{
+  "identifier": "main",
+  "description": "NOVA companion window; fixed native commands only",
+  "windows": ["main", "companion"],
+  "permissions": ["core:default", "core:window:allow-start-dragging", "autostart:allow-enable", "autostart:allow-disable", "autostart:allow-is-enabled", "notification:default"]
+}

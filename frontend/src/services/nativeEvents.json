@@ -1,0 +1,8 @@
+{
+  "voice": "native:voice",
+  "hotkey": "native:hotkey",
+  "control": "native:control",
+  "mode": "native:mode",
+  "panel": "native:panel",
+  "runtime": "native:runtime"
+}

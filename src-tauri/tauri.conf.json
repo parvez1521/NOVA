@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "NOVA",
+  "version": "0.2.0",
+  "identifier": "local.nova.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../frontend/dist"
+  },
+  "app": {
+    "macOSPrivateApi": true,
+    "windows": [
+      { "label": "main", "title": "NOVA Control Center", "width": 1080, "height": 760, "minWidth": 720, "minHeight": 520, "decorations": false, "transparent": true, "alwaysOnTop": false, "visible": false, "focus": false },
+      { "label": "companion", "title": "NOVA", "width": 280, "height": 330, "minWidth": 220, "minHeight": 240, "decorations": false, "transparent": true, "alwaysOnTop": false, "visible": true, "focus": false, "skipTaskbar": true }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: http://ipc.localhost http://127.0.0.1:* ws://127.0.0.1:*; img-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; media-src 'self' blob:; worker-src 'self' blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app", "dmg"],
+    "externalBin": ["binaries/nova-backend"],
+    "resources": { "resources/": "runtime/" },
+    "icon": ["icons/icon.png", "icons/icon.icns"],
+    "macOS": { "minimumSystemVersion": "14.0", "infoPlist": "Info.plist", "entitlements": "Entitlements.plist", "signingIdentity": "-" }
+  }
+}

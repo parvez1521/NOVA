@@ -1,0 +1,1 @@
+"""NOVA backend application package."""

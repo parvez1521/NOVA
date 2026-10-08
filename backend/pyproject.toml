@@ -1,0 +1,10 @@
+[project]
+name = "nova-backend"
+version = "0.1.0"
+description = "Local-first orchestration backend for NOVA"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+asyncio_mode = "auto"
